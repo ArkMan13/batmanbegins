@@ -23,8 +23,8 @@ function setup(){
     
     umbrella = new Umbrella(200,500);
    if(frameCount%150===0){
-      for(var i = 0; i<maxDrops;i++)
-      drops.push(new createDrop(random(0,400),random(0,400)))
+      {for(var i = 0; i<maxDrops;i++)
+      drops.push(new createDrop(random(0,400),random(0,400)))}
    }
     
 }
@@ -34,7 +34,7 @@ function draw(){
     background(0); 
     
     
-    rand = Math.round(random(1.4))
+    rand = Math.round(random(1,4))
     if(frameCount%80===0){
         thunderCreatedFrame = frameCount
         thunder = createSprite(random(10,370),random(10,30),10,10)
@@ -59,6 +59,8 @@ function draw(){
         drops[i].showDrop();
         drops[i].updateY();
     }
+   
+   drawSprites();
     
 }
   
